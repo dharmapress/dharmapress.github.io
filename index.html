@@ -1,1 +1,262 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ධර්ම මුද්‍රණාලය | Dharma Press</title>
+    <style>
+        /* Basic reset and font */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Main container styled like the wireframe board */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            border-bottom: 3px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        /* Layout for Sidebar and Content */
+        .layout {
+            display: flex;
+            min-height: 400px;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 200px;
+            border-right: 3px solid #333;
+            padding-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            cursor: pointer;
+        }
+
+        .sidebar-section ul {
+            list-style: none;
+            padding-left: 15px;
+            margin: 0;
+        }
+
+        .sidebar-section li {
+            margin-bottom: 12px;
+            font-size: 14px;
+            cursor: pointer;
+            color: #555;
+            transition: color 0.2s;
+        }
+
+        .sidebar-section li:hover, .sidebar-section h3:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Content Area Styling */
+        .content {
+            flex-grow: 1;
+            padding-left: 40px;
+        }
+
+        /* Hide all sections by default, except the active one */
+        .content-pane {
+            display: none;
+        }
+        
+        .content-pane.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .welcome-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Book List Styling */
+        .book-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .book-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .download-links a {
+            text-decoration: none;
+            color: #0066cc;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+        .download-links a:hover {
+            text-decoration: underline;
+            color: #004499;
+        }
+
+        .separator {
+            color: #999;
+            margin-right: 15px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>ධර්ම මුද්‍රණාලය | Dharma Press</h1>
+    </header>
+
+    <div class="layout">
+        <!-- LEFT SIDEBAR -->
+        <nav class="sidebar">
+            <div class="sidebar-section">
+                <!-- Clicking this returns to the welcome screen -->
+                <h3 onclick="showPane('welcome-pane')">සිංහල</h3>
+                <ul>
+                    <li onclick="showPane('pahankanuna-pane')">පහන්කණුව වෙළුම්</li>
+                    <li onclick="showPane('deshana-pane')">දේශනා</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <!-- Clicking this returns to the welcome screen -->
+                <h3 onclick="showPane('welcome-pane')">English</h3>
+                <ul>
+                    <li onclick="showPane('english-books-pane')">Books & Sermons</li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- RIGHT CONTENT AREA -->
+        <main class="content">
+            
+            <!-- Welcome Pane (Visible by default) -->
+            <div id="welcome-pane" class="content-pane active">
+                <div class="welcome-text">
+                    Sinhala welcome message<br><br>
+                    ඔබව සාදරයෙන් පිළිගනිමු. කරුණාකර වම් පස ඇති මෙනුවෙන් ඔබට අවශ්‍ය පොත් තෝරාගන්න.
+                </div>
+                <div class="welcome-text">
+                    English Welcome message<br><br>
+                    Welcome to Dharma Press. Please select a category from the left menu to browse and download our publications.
+                </div>
+            </div>
+
+            <!-- Pahankanuna Pane -->
+            <div id="pahankanuna-pane" class="content-pane">
+                <h2>පහන්කණුව වෙළුම්</h2>
+                
+                <div class="book-item">
+                    <div class="book-title">පහන්කණුව වෙළුම 1</div>
+                    <div class="download-links">
+                        <a href="files/pahankanuna_1.epub" download>epub</a> <span class="separator">|</span>
+                        <a href="files/pahankanuna_1.mobi" download>mobi</a> <span class="separator">|</span>
+                        <a href="files/pahankanuna_1.pdf" download>pdf</a>
+                    </div>
+                </div>
+
+                <div class="book-item">
+                    <div class="book-title">පහන්කණුව වෙළුම 2</div>
+                    <div class="download-links">
+                        <a href="files/pahankanuna_2.epub" download>epub</a> <span class="separator">|</span>
+                        <a href="files/pahankanuna_2.mobi" download>mobi</a> <span class="separator">|</span>
+                        <a href="files/pahankanuna_2.pdf" download>pdf</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deshana Pane -->
+            <div id="deshana-pane" class="content-pane">
+                <h2>දේශනා</h2>
+                
+                <div class="book-item">
+                    <div class="book-title">ධර්ම දේශනාව 1 (Sermon 1)</div>
+                    <div class="download-links">
+                        <a href="files/sermon_1.epub" download>epub</a> <span class="separator">|</span>
+                        <a href="files/sermon_1.mobi" download>mobi</a> <span class="separator">|</span>
+                        <a href="files/sermon_1.pdf" download>pdf</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- English Books Pane -->
+            <div id="english-books-pane" class="content-pane">
+                <h2>English Books & Sermons</h2>
+                
+                <div class="book-item">
+                    <div class="book-title">The Path of Dhamma</div>
+                    <div class="download-links">
+                        <a href="files/path_of_dhamma.epub" download>epub</a> <span class="separator">|</span>
+                        <a href="files/path_of_dhamma.mobi" download>mobi</a> <span class="separator">|</span>
+                        <a href="files/path_of_dhamma.pdf" download>pdf</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+<script>
+    // Function to switch between content panes
+    function showPane(paneId) {
+        // 1. Get all elements with the class 'content-pane'
+        const panes = document.querySelectorAll('.content-pane');
+        
+        // 2. Remove the 'active' class from all of them (hides them)
+        panes.forEach(pane => {
+            pane.classList.remove('active');
+        });
+        
+        // 3. Add the 'active' class to the specific pane we want to show
+        const selectedPane = document.getElementById(paneId);
+        if (selectedPane) {
+            selectedPane.classList.add('active');
+        }
+    }
+</script>
+
+</body>
+</html>
