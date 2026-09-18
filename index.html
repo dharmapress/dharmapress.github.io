@@ -1,56 +1,61 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ධර්ම ප්‍රකාශන|Dharma Press</title>
+    <title>ධර්ම මුද්‍රණාලය | Dharma Press</title>
     <style>
+        /* Configuration Variables */
+        :root {
+            --page-width: 90%;
+            --line-color: #c7740e;
+            --banner-bg: #ffd740; /* Yellow from wireframe */
+            --footer-bg: #ffe885; /* Lighter yellow for footer */
+            --text-color: #333;
+        }
+
         /* Basic reset and font */
- /* Basic reset and font */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-            color: #333;
+            padding: 20px 0;
+            background-color: #ffffff;
+            color: var(--text-color);
         }
 
-        /* Main container styled like the wireframe board */
-        .container {
-            max-width: 900px;
+        /* Master wrapper for the 90% configurable layout */
+        .page-wrapper {
+            width: var(--page-width);
             margin: 0 auto;
-            background: #fff;
-            border: 2px solid #c7740e;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            min-height: 90vh; /* Ensures footer stays near the bottom */
         }
 
-        /* Header Styling */
+        /* Header / Top Site Banner */
         header {
+            background-color: var(--banner-bg);
             text-align: center;
-            border-bottom: 3px solid #c7740e;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding: 40px 20px;
         }
         
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: normal;
         }
 
         /* Layout for Sidebar and Content */
         .layout {
             display: flex;
-            min-height: 400px;
+            flex-grow: 1;
+            padding: 40px 0;
         }
 
         /* Sidebar Styling */
         .sidebar {
             width: 200px;
-            border-right: 3px solid #c7740e;
+            border-right: 3px solid var(--line-color);
             padding-right: 20px;
             flex-shrink: 0;
         }
@@ -110,7 +115,7 @@
         .book-item {
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 1px dashed #c7740e;
+            border-bottom: 1px dashed var(--line-color);
         }
 
         .book-title {
@@ -136,6 +141,16 @@
             margin-right: 15px;
         }
 
+        /* Footer Styling */
+        footer {
+            background-color: var(--footer-bg);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -144,16 +159,16 @@
 </head>
 <body>
 
-<div class="container">
+<div class="page-wrapper">
+    <!-- Top Banner -->
     <header>
-        <h1>ධර්ම ප්‍රකාශන | Dharma Press</h1>
+        <h1>ධර්ම මුද්‍රණාලය | Dharma Press</h1>
     </header>
 
     <div class="layout">
         <!-- LEFT SIDEBAR -->
         <nav class="sidebar">
             <div class="sidebar-section">
-                <!-- Clicking this returns to the welcome screen -->
                 <h3 onclick="showPane('welcome-pane')">සිංහල</h3>
                 <ul>
                     <li onclick="showPane('pahankanuna-pane')">පහන්කණුව වෙළුම්</li>
@@ -162,7 +177,6 @@
             </div>
 
             <div class="sidebar-section">
-                <!-- Clicking this returns to the welcome screen -->
                 <h3 onclick="showPane('welcome-pane')">English</h3>
                 <ul>
                     <li onclick="showPane('english-books-pane')">Books & Sermons</li>
@@ -172,8 +186,7 @@
 
         <!-- RIGHT CONTENT AREA -->
         <main class="content">
-            
-            <!-- Welcome Pane (Visible by default) -->
+            <!-- Welcome Pane -->
             <div id="welcome-pane" class="content-pane active">
                 <div class="welcome-text">
                     Sinhala welcome message<br><br>
@@ -235,23 +248,26 @@
                     </div>
                 </div>
             </div>
-
         </main>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="copyright">
+            &copy; 2026 Dharma Press
+        </div>
+        <div class="contact">
+            Contact: info@dharmapress.example.com
+        </div>
+    </footer>
 </div>
 
 <script>
-    // Function to switch between content panes
     function showPane(paneId) {
-        // 1. Get all elements with the class 'content-pane'
         const panes = document.querySelectorAll('.content-pane');
-        
-        // 2. Remove the 'active' class from all of them (hides them)
         panes.forEach(pane => {
             pane.classList.remove('active');
         });
-        
-        // 3. Add the 'active' class to the specific pane we want to show
         const selectedPane = document.getElementById(paneId);
         if (selectedPane) {
             selectedPane.classList.add('active');
