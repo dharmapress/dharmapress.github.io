@@ -15,6 +15,10 @@
         }
 
         /* Basic reset and font */
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -155,6 +159,57 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .page-wrapper {
+                width: 100%; /* Use full width on small screens */
+            }
+            
+            body {
+                padding: 0; /* Remove body padding on mobile */
+            }
+
+            .layout {
+                flex-direction: column; /* Stack sidebar and content vertically */
+                padding: 20px;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 3px solid var(--line-color); /* Move border to bottom */
+                padding-right: 0;
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                display: flex;
+                flex-wrap: wrap; /* Allow sections to sit side-by-side if they fit */
+                gap: 20px;
+            }
+
+            .sidebar-section {
+                margin-bottom: 0;
+                min-width: 150px;
+            }
+
+            .content {
+                padding-left: 0; /* Remove left padding from content */
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 24px; /* Slightly smaller text for mobile header */
+            }
+
+            footer {
+                flex-direction: column; /* Stack footer elements */
+                text-align: center;
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -192,9 +247,8 @@
                     තෙරුවන් සරණයි<hr />
                     මෙම පිටුවේ ඇති බෞද්ධ ධර්ම පොත් සහ ලිපි ඔබේ උපාංගයට ගැළපෙන විවිධ ආකෘතිවලින් (formats) වම්පස ඇති මෙනුව භාවිතයෙන් බාගත කරගත හැක. <br/> <br/>
                     මෙම පරිවර්තන අධ්‍යාපනික සහ ධර්ම අධ්‍යයන කටයුතු සඳහා පමණක් සපයා ඇති අතර, වාණිජමය භාවිතයක් සඳහා නොවන බව කරුණාවෙන් සලකන්න. <br /> <br/>
-                    මුල් දේශනා සඳහා වන සියලුම පින්, කෘතඥතාව සහ ගෞරවය පූජ්‍ය කටුකුරුන්දේ ඤාණානන්ද හිමියන්ට, මුල් ප්‍රකාශකයන්ට සහ ඒ සඳහා ආධාර උපකාර කළ සියලු දෙනාට හිමි වේ. </br> <br/>
-                    ඔබ ප්‍රකාශන හිමිකරුවෙකු නම් මෙම ග්‍රන්ථ බෙදා හැරීම සම්බන්ධයෙන් කිසියම් ගැටළුවක් ඇත්නම්, කරුණාකර පහත දැක්වෙන විද්‍යුත් තැපැල් ලිපිනය හරහා (repository) භාරකරු සමඟ සම්බන්ධ වෙන්න. </br>
-
+                    මුල් දේශනා සඳහා වන සියලුම පින්, කෘතඥතාව සහ ගෞරවය පූජ්‍ය කටුකුරුන්දේ ඤාණානන්ද හිමියන්ට, මුල් ප්‍රකාශකයන්ට සහ ඒ සඳහා ආධාර උපකාර කළ සියලු දෙනාට හිමි වේ. <br> <br/>
+                    ඔබ ප්‍රකාශන හිමිකරුවෙකු නම් මෙම ග්‍රන්ථ බෙදා හැරීම සම්බන්ධයෙන් කිසියම් ගැටළුවක් ඇත්නම්, කරුණාකර පහත දැක්වෙන විද්‍යුත් තැපැල් ලිපිනය හරහා (repository) භාරකරු සමඟ සම්බන්ධ වෙන්න. <br>
                 </div>
                 <div class="welcome-text">
                     May the Triple Gem Bless You!<hr/>
@@ -249,7 +303,6 @@
     </div>
 
     <!-- Footer -->
-<!-- Footer -->
     <footer>
         <div class="copyright">
             &copy; 2026 Dharma Press<br>
