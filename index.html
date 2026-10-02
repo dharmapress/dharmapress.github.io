@@ -9,8 +9,8 @@
         :root {
             --page-width: 80%;
             --line-color: #c7740e;
-            --banner-bg: #ffd740; /* Yellow from wireframe */
-            --footer-bg: #ffe885; /* Lighter yellow for footer */
+            --banner-bg: #ffd740;
+            --footer-bg: #ffe885;
             --text-color: #333;
         }
 
@@ -33,7 +33,7 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            min-height: 90vh; /* Ensures footer stays near the bottom */
+            min-height: 90vh;
         }
 
         /* Header / Top Site Banner */
@@ -63,7 +63,7 @@
             padding-right: 20px;
             flex-shrink: 0;
             display: flex;
-            flex-direction: column; /* Aligns items in a column */
+            flex-direction: column;
         }
 
         .sidebar-section {
@@ -171,28 +171,28 @@
         /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .page-wrapper {
-                width: 100%; /* Use full width on small screens */
+                width: 100%;
             }
             
             body {
-                padding: 0; /* Remove body padding on mobile */
+                padding: 0;
             }
 
             .layout {
-                flex-direction: column; /* Stack sidebar and content vertically */
+                flex-direction: column;
                 padding: 20px;
             }
 
             .sidebar {
                 width: 100%;
                 border-right: none;
-                border-bottom: 3px solid var(--line-color); /* Move border to bottom */
+                border-bottom: 3px solid var(--line-color);
                 padding-right: 0;
                 padding-bottom: 20px;
                 margin-bottom: 20px;
                 display: flex;
-                flex-direction: row; /* Switch back to row for mobile */
-                flex-wrap: wrap; /* Allow sections to sit side-by-side if they fit */
+                flex-direction: row;
+                flex-wrap: wrap;
                 gap: 20px;
             }
 
@@ -202,11 +202,11 @@
             }
             
             .sidebar-bottom {
-                margin-top: 0; /* Remove auto top-margin on mobile */
+                margin-top: 0;
             }
 
             .content {
-                padding-left: 0; /* Remove left padding from content */
+                padding-left: 0;
             }
 
             header {
@@ -214,11 +214,11 @@
             }
 
             header h1 {
-                font-size: 24px; /* Slightly smaller text for mobile header */
+                font-size: 24px;
             }
 
             footer {
-                flex-direction: column; /* Stack footer elements */
+                flex-direction: column;
                 text-align: center;
                 gap: 15px;
             }
@@ -295,7 +295,7 @@
                         <a href="file/Pahankanuwa Sermons Volume 01.html" download>html</a>
                     </div>
                 </div>
-                    <div class="book-item">
+                <div class="book-item">
                     <div class="book-title">පහන්කණුව වෙළුම 2</div>
                     <div class="download-links">
                         <a href="file/Pahankanuwa Sermons Volume 02.epub" download>epub</a> <span class="separator">|</span>
@@ -305,8 +305,7 @@
                         <a href="file/Pahankanuwa Sermons Volume 02.html" download>html</a>
                     </div>
                 </div>
-                </div>
-                    <div class="book-item">
+                <div class="book-item">
                     <div class="book-title">පහන්කණුව වෙළුම 3</div>
                     <div class="download-links">
                         <a href="file/Pahankanuwa Sermons Volume 03.epub" download>epub</a> <span class="separator">|</span>
